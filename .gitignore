@@ -1,0 +1,80 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.stats
+*.out
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+
+# Results #
+######################
+*.pdf
+*.xlsx
+*.tex
+
+
+
+data/*
+temp_old_glue
+
+src/checkpoints
+src/checkpoints_only_seed2
+src/new_glue
+src/old_glue
+src/_seeds.sh
+src/create_job.sh
+
+src/bias-bench/
+src/bias-bench/cache
+src/bias-bench/checkpoints_new_all_seeds
+src/bias-bench/checkpoints_new_only_seed2
+src/bias-bench/checkpoints_old_all_seeds
+src/bias-bench/data
+src/bias-bench/logs
+src/bias-bench/logs.zip
+src/bias-bench/old_checkpoints
+src/bias-bench/results
+src/bias-bench/*.zip
+
+src/assignment/code_review
+src/assignment/logs
+src/assignment/old_export_files
+src/assignment/old_tpr_files
+src/assignment/results
+src/assignment/tool
+src/assignment/twitter-concat-sentiment-v4-multiclass
+
+batch_jobs/*

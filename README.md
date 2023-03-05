@@ -31,3 +31,60 @@ INLP | BiasBios            | [Download](download_data.sh) | BiasBios dataset for
 <!-- Bias-Bench| Wikipedia-10   | [Download](https://drive.google.com/file/d/1boQTn44RnHdxWeUKQAlRgQ7xrlQ_Glwo/view?usp=sharing)       | English Wikipedia dump used for CDA and Dropout. | `data/text` -->
 
 Each dataset should be downloaded to the specified path, relative to the root directory of the project.
+
+# Experiments
+
+Suppose each dataset are downloaded or created to the specified path.
+
+## Word Embedding Debiasing (Section 4.1 in the paper)
+
+Move the script file to the root of [matlab](src/matlab/), then call the script file to run AMSAL with specified hyperparameters.
+
+```sh
+./src/matlab/matscript.sh
+```
+
+Please note: you need to change the start index and end index in [matscript.sh](src/matlab/matscript.sh), depends on how many matlab jobs you want to submit at once.
+
+Check the spreadsheet created under the folder [data](data), named full.xlsx and epoch.xlsx.
+
+## BiasBios Experiments (Section 4.2 in the paper)
+
+### AM Step
+Move the script files under the folder [biography](src/matlab/script_biography/) to the root of [matlab](src/matlab/), then run AMSAL with hyperparameters specified in the scripts.
+
+```sh
+./src/matlab/matscript.sh
+```
+
+Check the spreadsheet created under the folder of [data](data), named full.xlsx and epoch.xlsx.
+
+
+### Removal Step and Downstream Tasks
+
+Run the script files to debias the neural representations of the biographies on genders, and perform the profession classifications.
+
+[](./src/assignment/export_tpr-gap_biography.sh)
+```sh
+./src/assignment/tpr-gap_biasbios.sh
+```
+
+### Export the results to spreadsheet and overleaf code
+
+```sh
+./src/assignment/export_tpr-gap_biography.sh
+```
+The tables will be stored in the folder of [tables](src/assignment/tables/) and the overleaf code will be stored in the folder of [biography](src/assignment/tables/biography/).
+
+## BiasBench Experiments (Section 4.3 in the paper)
+
+
+
+
+
+## Twitter Sentiment with Multiple Guarded Attributes Experiments (Section 4.4 in the paper)
+
+
+
+
+
