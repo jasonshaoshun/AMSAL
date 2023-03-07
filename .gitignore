@@ -45,7 +45,8 @@ Thumbs.db
 *.xlsx
 *.tex
 
-
+*.egg-info*
+*Makefile*
 
 data/*
 temp_old_glue
@@ -57,16 +58,19 @@ src/old_glue
 src/_seeds.sh
 src/create_job.sh
 
-src/bias-bench/
+
+src/bias-bench/bias_bench.egg-info
 src/bias-bench/cache
 src/bias-bench/checkpoints_new_all_seeds
 src/bias-bench/checkpoints_new_only_seed2
 src/bias-bench/checkpoints_old_all_seeds
 src/bias-bench/data
 src/bias-bench/logs
-src/bias-bench/logs.zip
 src/bias-bench/old_checkpoints
 src/bias-bench/results
+src/bias-bench/tables
+src/bias-bench/logs.zip
+src/bias-bench/Makefile
 src/bias-bench/*.zip
 
 src/assignment/code_review
