@@ -12,12 +12,6 @@ all_assignments=(
     "Deepmoji"
 )
 
-# Model_to_experiment=(
-#     ["Bert"]="ProfessionGender"
-#     ["Fasttext"]="ProfessionGender"
-#     ["Deepmoji"]="SentimentRace"
-# )
-
 
 # Load the required modules
 eval "$(/bask/projects/j/jlxi8926-auto-sum/shun/anaconda3/bin/conda shell.bash hook)"

@@ -38,7 +38,7 @@ Suppose each dataset are downloaded or created to the specified path.
 
 ## Word Embedding Debiasing (Section 4.1 in the paper)
 
-Move the script file to the root of [matlab](src/matlab/), then call the script file to run AMSAL with specified hyperparameters.
+Move the script file under the folder of [script_glove](src/matlab/script_glove) to the root of [matlab](src/matlab/). Then call the script file to run AMSAL with specified hyperparameters, or call another script file to queue the experimental scripts automatically by the following code.
 
 ```sh
 ./src/matlab/matscript.sh
@@ -51,20 +51,21 @@ Check the spreadsheet created under the folder [data](data), named full.xlsx and
 ## BiasBios Experiments (Section 4.2 in the paper)
 
 ### AM Step
-Move the script files under the folder [biography](src/matlab/script_biography/) to the root of [matlab](src/matlab/), then run AMSAL with hyperparameters specified in the scripts.
+Move the script files under the folder of [biography](src/matlab/script_biography/) to the root of [matlab](src/matlab/), then run AMSAL with hyperparameters specified in the scripts by calling the scripts one by one or automatically queueu the jobs by calling the following code. 
 
 ```sh
 ./src/matlab/matscript.sh
 ```
 
-Check the spreadsheet created under the folder of [data](data), named full.xlsx and epoch.xlsx.
+Check the result in the spreadsheet created under the folder of [data](data), named full.xlsx and epoch.xlsx.
 
+Please also check the script files under the folder of [BertModel_PARTIAL](src/matlab/script_biography_BertModel_different_partial_n) and [FastTextModel_PARTIAL](src/matlab/script_biography_FastText_different_partial_n/) to run the partially supervised assignment of AMSAL.
 
-### Removal Step and Downstream Tasks
+### Removal Step and Downstream Tasks Evaluation
 
 Run the script files to debias the neural representations of the biographies on genders, and perform the profession classifications.
 
-[](./src/assignment/export_tpr-gap_biography.sh)
+
 ```sh
 ./src/assignment/tpr-gap_biasbios.sh
 ```
@@ -76,7 +77,14 @@ Run the script files to debias the neural representations of the biographies on 
 ```
 The tables will be stored in the folder of [tables](src/assignment/tables/) and the overleaf code will be stored in the folder of [biography](src/assignment/tables/biography/).
 
+
+
+
 ## BiasBench Experiments (Section 4.3 in the paper)
+
+
+### Create Dataset
+
 
 
 
@@ -85,6 +93,48 @@ The tables will be stored in the folder of [tables](src/assignment/tables/) and 
 ## Twitter Sentiment with Multiple Guarded Attributes Experiments (Section 4.4 in the paper)
 
 
+### Create Dataset
+
+```sh
+# Save the Twitter Sentiment (Political) datasets in npz and matlab readable format
+# Twitter dataset with original labelling
+./src/assignment/create_twitter_dataset_.sh
+
+# Twitter dataset labelled by word overlap
+./src/assignment/create_twitter_dataset_labelled_by_overlap_.sh
+```
 
 
 
+## Deepmoji Experiments (Section 4.5 in the paper)
+
+Deepmoji experiments consider the stereotypes of race in the twitters.
+
+### AM Step
+Move the script files under the folder of [deepmoji](src/matlab/script_deepmoji/) to the root of [matlab](src/matlab/), then run AMSAL with hyperparameters specified in the scripts by calling the scripts one by one or automatically queueu the jobs by calling the following code. 
+
+```sh
+./src/matlab/matscript.sh
+```
+
+Check the result in the spreadsheet created under the folder of [data](data), named full.xlsx and epoch.xlsx.
+
+Please also check the script files under the folders of [R5S5](src/matlab/script_deepmoji_R5S5_different_partial_n/), [R5S8](src/matlab/script_deepmoji_R5S8_different_partial_n/) and [R8S5](src/matlab/script_deepmoji_R8S5_different_partial_n/) to run the partially supervised assignment of AMSAL.
+
+
+### Removal Step and Downstream Tasks Evaluation
+
+Run the script files to debias the neural representations of the biographies on genders, and perform the profession classifications.
+
+
+```sh
+./src/assignment/tpr-gap_deepmoji.sh
+```
+
+### Export the results to spreadsheet and overleaf code
+
+```sh
+./src/assignment/export_tpr-gap_table-deepmoji.sh
+```
+
+The tables will be stored in the folder of [tables](src/assignment/tables/) and the overleaf code will be stored in the folder of [deepmoji](src/assignment/tables/deepmoji/).
