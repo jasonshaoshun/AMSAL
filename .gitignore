@@ -68,10 +68,11 @@ src/bias-bench/data
 src/bias-bench/logs
 src/bias-bench/old_checkpoints
 src/bias-bench/results
-src/bias-bench/tables
+src/bias-bench/tables/*
 src/bias-bench/logs.zip
 src/bias-bench/Makefile
 src/bias-bench/*.zip
+
 
 src/assignment/code_review
 src/assignment/logs
@@ -80,5 +81,3 @@ src/assignment/old_tpr_files
 src/assignment/results
 src/assignment/tool
 src/assignment/twitter-concat-sentiment-v4-multiclass
-
-batch_jobs/*

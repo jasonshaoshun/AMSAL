@@ -85,10 +85,97 @@ The tables will be stored in the folder of [tables](src/assignment/tables/) and 
 
 ### Create Dataset
 
+```sh
+./src/bias-bench/batch_jobs/create_data.sh
+```
+
+### Alignment and Maximization step
+
+Move the script files under the folder of [biasbench](src/matlab/script_biasbench/) to the root of [matlab](src/matlab/), then run AMSAL with hyperparameters specified in the scripts by calling the scripts one by one or automatically queueu the jobs by calling the following code. 
+
+```sh
+./src/matlab/matscript.sh
+```
+
+Check the result in the spreadsheet created under the folder of [data](data), named full.xlsx and epoch.xlsx.
+
+### Removal Step
+
+```sh
+# Compute the projection matrix by SAL
+./src/bias-bench/batch_jobs/sal_eigenvector.sh
+
+# Compute the projection matrix by INLP
+./src/bias-bench/batch_jobs/inlp_projection_matrix.sh
+```
+
+### Downstream Tasks
+
+#### Task 1 Stereoset (section 4.3 in the paper)
+
+```sh
+# Evaluates non-debiased models against StereoSet
+./src/bias-bench/batch_jobs/stereoset.sh
+
+# Evaluates debiased models against StereoSet
+./src/bias-bench/batch_jobs/stereoset_debias.sh
+
+# Summary the results
+./src/bias-bench/batch_jobs/stereoset_evaluation.sh
+
+# Export to LaTeX code
+./src/bias-bench/batch_jobs/export_stereoset.sh
+```
+
+Please check the spreadsheet and results json file under the folder of [stereoset](src/bias-bench/results/stereoset/), also the LaTex code stored in the folder of [tables](src/bias-bench/tables).
+
+
+#### Task 2 CrowS-Pairs (section 4.3 in the paper)
+
+```sh
+# Evaluates non-debiased models against CrowS-Pairs
+./src/bias-bench/batch_jobs/crows.sh
+
+# Evaluates debiased models against CrowS-Pairs
+./src/bias-bench/batch_jobs/crows_debias.sh
+
+# Export to LaTeX code
+./src/bias-bench/batch_jobs/export_crows.sh
+```
+
+Please check the results saved in the folder of [CrowS-Pairs](src/bias-bench/results/crows/) and LaTex code stored in the folder of [tables](src/bias-bench/tables).
+
+#### Task 3 SEAT (Appendix B)
+
+
+```sh
+# Evaluates non-debiased models against SEAT
+./src/bias-bench/batch_jobs/seat.sh
+
+# Evaluates debiased models against SEAT
+./src/bias-bench/batch_jobs/seat_debias.sh
+
+# Export to LaTeX code
+./src/bias-bench/batch_jobs/export_seat.sh
+```
+
+Please check the results saved in the folder of [SEAT](src/bias-bench/results/seat/) and LaTex code stored in the folder of [tables](src/bias-bench/tables).
 
 
 
+#### Task 4 GLUE (Appendix B)
 
+
+```sh
+# Evaluates non-debiased models against 
+./src/bias-bench/batch_jobs/.sh
+
+# Evaluates debiased models against 
+./src/bias-bench/batch_jobs/.sh
+
+# Export to LaTeX code
+./src/bias-bench/batch_jobs/.sh
+```
 
 ## Twitter Sentiment with Multiple Guarded Attributes Experiments (Section 4.4 in the paper)
 
