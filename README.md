@@ -24,9 +24,9 @@ The external datasets required by the projects above
 
 Project| Dataset | Download Link | Notes | Download Directory
 --------|--------|---------------|-------|-------------------
-Bias-Bench | Wikipedia-2.5 | [Download](https://drive.google.com/file/d/1JSlm8MYDbNjpMPnKbb91T-xZnlWAZmZl/view?usp=sharing)       | English Wikipedia dump used for SentenceDebias and INLP. (Section 4.3) | * `data/text`
-INLP | Word Embedding      | [Download](download_data.sh) | GloVe Word Embeddings for Most Gendered Word (Section 4.1) | *
-INLP | BiasBios            | [Download](download_data.sh) | BiasBios dataset for fair profession prediction (Section 4.1) | *
+Bias-Bench | Wikipedia-2.5 | [Download](https://drive.google.com/file/d/1JSlm8MYDbNjpMPnKbb91T-xZnlWAZmZl/view?usp=sharing)       | English Wikipedia dump used for SentenceDebias and INLP. (Section 4.3) | `data/text`
+INLP | Word Embedding      | [Download](download_data.sh) | GloVe Word Embeddings for Most Gendered Word (Section 4.1) | `data/word-embedding`
+INLP | BiasBios            | [Download](download_data.sh) | BiasBios dataset for fair profession prediction (Section 4.1) | `data/biography`
 
 <!-- Bias-Bench| Wikipedia-10   | [Download](https://drive.google.com/file/d/1boQTn44RnHdxWeUKQAlRgQ7xrlQ_Glwo/view?usp=sharing)       | English Wikipedia dump used for CDA and Dropout. | `data/text` -->
 
@@ -165,17 +165,7 @@ Please check the results saved in the folder of [SEAT](src/bias-bench/results/se
 
 #### Task 4 GLUE (Appendix B)
 
-
-```sh
-# Evaluates non-debiased models against 
-./src/bias-bench/batch_jobs/.sh
-
-# Evaluates debiased models against 
-./src/bias-bench/batch_jobs/.sh
-
-# Export to LaTeX code
-./src/bias-bench/batch_jobs/.sh
-```
+Very Complex, will be explained in a separate page
 
 ## Twitter Sentiment with Multiple Guarded Attributes Experiments (Section 4.4 in the paper)
 

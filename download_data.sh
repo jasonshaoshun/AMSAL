@@ -6,14 +6,27 @@ mkdir data
 # mkdir -p data/embeddings
 # Check
 
-wget https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip -P data/embeddings/
-wget http://nlp.stanford.edu/data/glove.42B.300d.zip -P data/embeddings/
-unzip data/embeddings/crawl-300d-2M.vec.zip -d data/embeddings/                 
-unzip data/embeddings/glove.42B.300d.zip -d data/embeddings/ 
+# wget https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip -P data/embeddings/
+# wget http://nlp.stanford.edu/data/glove.42B.300d.zip -P data/embeddings/
+# unzip data/embeddings/crawl-300d-2M.vec.zip -d data/embeddings/                 
+# unzip data/embeddings/glove.42B.300d.zip -d data/embeddings/ 
 
 # mkdir -p data/biasbios
 # Check
 
-wget https://storage.googleapis.com/ai2i/nullspace/biasbios/train.pickle -P data/biasbios/
-wget https://storage.googleapis.com/ai2i/nullspace/biasbios/dev.pickle -P data/biasbios/
-wget https://storage.googleapis.com/ai2i/nullspace/biasbios/test.pickle -P data/biasbios/
+# wget https://storage.googleapis.com/ai2i/nullspace/biasbios/train.pickle -P data/biasbios/
+# wget https://storage.googleapis.com/ai2i/nullspace/biasbios/dev.pickle -P data/biasbios/
+# wget https://storage.googleapis.com/ai2i/nullspace/biasbios/test.pickle -P data/biasbios/
+
+
+mkdir -p data/word-embedding
+mkdir -p data/projection_matrix/word-embedding
+# we will provide the saved datasets later
+gdown google_file_ID -O data/word-embedding/
+
+mkdir -p data/biography
+mkdir -p data/projection_matrix/biography
+# we will provide the saved datasets later
+gdown google_file_ID -O data/biography/
+
+

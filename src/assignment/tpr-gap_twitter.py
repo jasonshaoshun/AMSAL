@@ -425,6 +425,7 @@ def run_political_twitter_experiments(model, dataset_path, projection_matrix_fil
         else:
             print("dataset version is unknown")
             exit()
+            
     elif model == "FastText":
         if dataset_version == "v3":
             clf_original = LogisticRegression(penalty = "l1", C = 0.1, random_state = 0, solver = "liblinear", max_iter = 1000)

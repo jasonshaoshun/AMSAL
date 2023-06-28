@@ -16,6 +16,7 @@ export PYTHONPATH="${PYTHONPATH}:/bask/projects/j/jlxi8926-auto-sum/shun/code/US
 
 # python src/assignment/create_twitter_dataset_labelled_by_overlap_bert.py
 
+
 sbatch \
     --gres=gpu:1 \
     src/assignment/python_job.sh src/assignment/create_twitter_dataset_labelled_by_overlap_bert.py \
