@@ -32,6 +32,21 @@ INLP | BiasBios            | [Download](download_data.sh) | BiasBios dataset for
 
 Each dataset should be downloaded to the specified path, relative to the root directory of the project.
 
+# Datasets Size
+
+This dataset and model size
+
+Section | Experiment                                         | Model                                | Dataset size                  | Model Size
+--------|----------------------------------------------------|--------------------------------------|-------------------------------|-------------------
+4.1     | Word Embedding Debiasing                           | GloVe                                | 18M                           | 1 M
+4.2     | BiasBios                                           | BertModel                            | 340M                          | 432 M
+~       | ~                                                  | FastText                             | 134M                          | 164 M
+4.3     | BiasBench                                          | BertModel + ALBERT + RoBERTa + GPT-2 | >> 1G (Provided by BiasBench) | 257M
+4.4     | Multiple-Guarded Attribute Sentiment               | BertModel                            | 55M                           | 76 M
+4.4     | Method Limitation (sentiment analysis on twitter)  | DeepMoji                             | 244M                          | 332 M
+
+
+
 # Experiments
 
 Suppose each dataset are downloaded or created to the specified path.

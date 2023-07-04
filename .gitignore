@@ -51,6 +51,7 @@ Thumbs.db
 data/*
 temp_old_glue
 
+
 src/checkpoints
 src/checkpoints_only_seed2
 src/new_glue
