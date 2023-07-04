@@ -43,7 +43,7 @@ Section | Experiment                                         | Model            
 ~       | ~                                                  | FastText                             | 134M                          | 164 M
 4.3     | BiasBench                                          | BertModel + ALBERT + RoBERTa + GPT-2 | >> 1G (Provided by BiasBench) | 257M
 4.4     | Multiple-Guarded Attribute Sentiment               | BertModel                            | 55M                           | 76 M
-4.4     | Method Limitation (sentiment analysis on twitter)  | DeepMoji                             | 244M                          | 332 M
+4.5     | Method Limitation (sentiment analysis on twitter)  | DeepMoji                             | 244M                          | 332 M
 
 
 
